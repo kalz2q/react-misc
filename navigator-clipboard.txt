@@ -1,0 +1,26 @@
+navigator-clipboard.txt
+html(pug)
+.min-h-screen.bg-blue-200.flex.items-center.justify-center
+  .grid.grid-cols-2.grid-rows-2.gap-2
+    input#key.px-8.py-4.rounded-md(type="text" data-lpignore="true" value="入力欄")
+    button#copy.bg-blue-500.text-white(class="hover:bg-blue-600") Copy
+
+    input#value.px-8.py-4.rounded-md(placeholder="Paste value" type="text" data-lpignore="true")
+    
+    button#paste.bg-green-500.text-white(class="hover:bg-green-600 active:bg-green-700") Paste
+
+css => empty
+
+js(babel)
+const COPY = document.querySelector('#copy')
+const PASTE = document.querySelector('#paste')
+const KEY = document.querySelector('#key')
+const VALUE = document.querySelector('#value')
+
+COPY.addEventListener('click', () => {
+  navigator.clipboard.writeText(KEY.value)
+})
+
+PASTE.addEventListener('click', () => {
+  navigator.clipboard.readText().then(v => (VALUE.value = v))
+})
