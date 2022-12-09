@@ -1,65 +1,32 @@
 import React from 'react';
 import './App.css';
-// navigator clipboard API demo
-const { useState } = React;
-
 
 function App() {
-  // const [inputValue, setInputValue] = useState("");
-  // const [targetValue, setTargetValue] = useState("Paste value");
-  const [[inputValue, targetValue], setValues] = useState(["kk", "mm"]);
-
-  const handleChange = (e: any) => {
-    // setInputValue(e.target.value);
-    let newValues: [string, string] = [inputValue, targetValue];
-    newValues[0] = e.target.value;
-    setValues(newValues);
-  };
-
-  const handleCopyClick = () => {
-    navigator.clipboard.writeText(inputValue)
-  }
-
-  const handlePasteClick = () => {
-    // navigator.clipboard.readText().then((v) => (e.target.value = v))
-    // let currentTargetValue = "";
-    // navigator.clipboard.readText().then((v) =>
-    //   currentTargetValue = v
-    // );
-    // setTargetValue(currentTargetValue)
-    // alert("yuouare here")
-    let newTargetValue = "youare";
-    navigator.clipboard.readText().then((v) => {
-      newTargetValue = v;
-      console.log(newTargetValue);
-    }
-
-    );
-    let newValues: [string, string] = [inputValue, newTargetValue];
-    console.log(newValues);
-    setValues(newValues);
-  }
-
   return (
     <div className="App">
-      <form onSubmit={() => handleCopyClick()}>
+      <form onSubmit={(e) => handleCopyClick(e)}>
         <input
           value={inputValue}
-          onChange={(e) => handleChange(e)}
+          onChange={(e) => setInputValue(e.target.value)}
           autoFocus
           className="add-item-input"
           placeholder="入力欄"
         />
         <input type="submit" value="Copy" className="submitButton" />
       </form>
-      <form onSubmit={() => handlePasteClick()}>
-        <input type="text" defaultValue={targetValue}
-        />
-        <input type="submit" value="Paste" className="submitButton" />
-      </form>
-    </div>
+      <form onSubmit={(e) => handlePasteecho "# react-misc" >> README.md
+      git init
+      git add README.md
+      git commit -m "first commit"
+      git branch -M main
+      git remote add origin git@github.com:kalz2q/react-misc.git
+git push -u origin mainClick(e)}>
+      <input
+      />
+      <input type="submit" value="Paste" className="submitButton" />
+    </form>
+    </div >
   );
 }
 
 export default App;
-
