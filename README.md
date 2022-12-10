@@ -4,6 +4,7 @@ HTML【フォーム】12 ～出力欄（output）
 https://programmercollege.jp/column/2716/
 を読んでみよう。
 => 読みだしたらそもそも react で数値を云々。
+=> react documents を読もう。
 
 ---
 

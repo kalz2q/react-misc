@@ -1,53 +1,20 @@
 import React from 'react';
 import './App.css';
+// react本家のdocument の hello-world-clock をなるべく元の形を残しながら翻訳
+
 const { useState } = React;
 
 function App() {
-  const [inputValue, setInputValue] = useState("");
-  const [targetValue, setTargetValue] = useState("paste");
-
-  const handleChange = (e: any) => {
-    setInputValue(e.target.value);
-  };
-
-  const handleCopyClick = (e: any) => {
-    e.preventDefault();
-    navigator.clipboard.writeText(inputValue)
-  }
-
-
-  const handlePasteClick = (e: any) => {
-    e.preventDefault()
-    let currentTargetValue = "";
-    navigator.clipboard.readText().then((v) => {
-      currentTargetValue = v;
-      alert(v);
-    }
-
-    );
-    setTargetValue(currentTargetValue)
-  }
 
   return (
     <div className="App">
-      <form onSubmit={(e) => handleCopyClick(e)}>
-        <input
-          value={inputValue}
-          onChange={(e) => handleChange(e)}
-          autoFocus
-          className="add-item-input"
-          placeholder="入力欄"
-        />
-        <input type="submit" value="Copy" className="submitButton" />
-      </form>
-      <form onSubmit={(e) => handlePasteClick(e)}>
-        <input
-          value={targetValue}
-        />
-        <input type="submit" value="Paste" className="submitButton" />
-      </form>
+      
     </div >
   );
 }
+
+const nameData = `Sara
+Cahal
+Edite`
 
 export default App;
