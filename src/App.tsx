@@ -5,30 +5,13 @@ import './App.css';
 
 function App() {
 
-  type Name = {
-    id: number;
-    name: string
-  }
+  const jsonArray = csv2json(originalData);
 
-  // const names: Name[] = [
-  //   {
-  //     id: 0,
-  //     name: "Sara"
-  //   },
-  //   {
-  //     id: 1,
-  //     name: "Cahal"
-  //   },
-  //   {
-  //     id: 2,
-  //     name: "Edite"
-  //   }
-  // ]
 
   return (
     <div className="App">
       <ul>
-        {jsondata.map((v) => {
+        {jsonArray.map((v) => {
           return (
             <li
               key={v["id"]}
@@ -42,11 +25,32 @@ function App() {
   );
 }
 
-const original = `
-id,success,registrationDate
-1,true,2022/01/03
-2,false,2022/08/30
-3,true,2022/12/13`
+const originalData = `
+上の句, 下の句
+あさぼらけう "あらわれわたる"
+あきのたの, わがころもでは
+`
+type Item = {
+  "id": number;
+  "上の句": string;
+  "下の句": string
+}
 
+const csv2json = (csvData: string) => {
+  let csvLines = csvData.split('\n').filter(Boolean); // 行ごとに分割する
+  const keyNames = csvLines[0].split(/[\n\s\"\',;.]+/); // [ '上の句', ' 下の句' ]
+  let jsonArray = [];
+
+  for (let i = 1; i < csvLines.length; i++) { // 0行目は見出しに使ったので1行目から
+    let a_line: Item = {id: 0,   "上の句": "", "下の句": ""};
+    let csvArrayData = csvLines[i].split(/[\n\s\"\',;.]+/); // [ 'あさぼらけ', ' あらわれわたる' ]
+    a_line['id'] = i;
+    for (let j = 0; j < keyNames.length; j++) {
+      a_line[keyNames[j]] = csvArrayData[j];
+    }
+    jsonArray.push(a_line);
+  }
+  return jsonArray;
+}
 
 export default App;
