@@ -1,0 +1,46 @@
+const csvFilePath = '[CSVファイルのパス]'
+const jsonFilePath = '[JSONファイルのパス]'
+
+const csv = require('csvtojson')
+const moment = require('moment')
+const fs = require('fs')
+
+csv()
+.fromFile(csvFilePath)
+.then((rows)=>{
+  rows = rows.map((row) => {
+    row.id = new Number(row.id)
+    row.success = new Boolean(row.success)
+    row.registrationDate = moment(row.registrationDate).format("YYYY-MM-DD")
+    return row
+  })
+  fs.writeFile(jsonFilePath, JSON.stringify(rows, null, 2), (err) => {
+    if (err) {
+      throw err;
+    }
+    console.log("JSON generated.");
+  })
+})
+
+id,success,registrationDate
+1,true,2022/01/03
+2,false,2022/08/30
+3,true,2022/12/13
+
+[
+  {
+    "id": 1,
+    "success": true,
+    "registrationDate": "2022-01-03"
+  },
+  {
+    "id": 2,
+    "success": true,
+    "registrationDate": "2022-08-30"
+  },
+  {
+    "id": 3,
+    "success": true,
+    "registrationDate": "2022-12-13"
+  }
+]

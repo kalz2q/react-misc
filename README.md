@@ -1,5 +1,13 @@
 # react-misc
 
+hello names を作ってみて、文字列処理をもう少し学びたいと思った。
+課題 heredoc から id 入りの json を作る
+
+[Tips] JavaScript で CSV を読み込んで JSON を作る
+react-csv2json
+
+---
+
 HTML【フォーム】12 ～出力欄（output）
 https://programmercollege.jp/column/2716/
 を読んでみよう。

@@ -1,0 +1,50 @@
+import React from 'react';
+import './App.css';
+// react本家のdocument hello names の翻訳 => conponent を使わない。 props を使わない。
+// list 表示は map を使う。そのために id が必要
+
+function App() {
+
+  type Name = {
+    id: number;
+    name: string
+  }
+
+  const names: Name[] = [
+    {
+      id: 0,
+      name: "Sara"
+    },
+    {
+      id: 1,
+      name: "Cahal"
+    },
+    {
+      id: 2,
+      name: "Edite"
+    }
+  ]
+
+  return (
+    <div className="App">
+      <ul>
+        {names.map((person) => {
+          return (
+            <li
+              key={person["id"]}
+            >
+              <h1>Hello, {person["name"]}</h1>
+            </li>
+          );
+        })}
+      </ul>
+    </div >
+  );
+}
+
+// const data = `Sara,
+// Cahal
+// Edite`
+
+
+export default App;
