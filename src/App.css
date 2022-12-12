@@ -5,23 +5,29 @@
 li {
   list-style: none;
 }
-
-.acc_trigger {
-  &.is_open {
-    //+-アイコン
-    .fa-plus-circle::before {
-      content: "\f056";
-    }
-    //矢印アイコン
-    .fa-chevron-down::before {
-      content: "\f077";
-    }
-  }
+.card {
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16);
+  width: 800px;
 }
-.acc_content {
-  display: none;
+.card-header {
+  background: #dcdcdc;
+  cursor: pointer;
+  padding: 12px 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.card-body {
+  background: white;
+  padding: 30px 18px 30px 18px;
+}
 
-  &.is_open {
-    display: block;
-  }
+.fa {
+  height: 12px;
+  width: 12px;
+  transition: transform 0.6s ease;
+}
+
+.rotate {
+  transform: rotate(90deg);
 }

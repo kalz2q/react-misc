@@ -1,0 +1,80 @@
+ /*   
+  When we declare a state variable with useState, 
+  it returns a pair — an array with two items. 
+  The first item is the current value, 
+  and the second is a function that lets us update it.
+  
+  useState also called state hook
+  it lets us add local state to React function components
+  
+  Hooks are functions that let you “hook into” React features from function components
+  Their names always start with use
+ */
+ function Example() {
+   const products = [
+      {
+        header: 'What is Lorem Ipsum?',
+        body: 'The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. '
+      },
+      {
+        header: 'What is Lorem Ipsum?',
+        body: 'The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form'
+      },
+      {
+        header: 'What is Lorem Ipsum?',
+        body: 'The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.'
+      }
+    ];
+   const cards = products.map((product) => {
+     const { header, body } = product;
+     return (
+      <Accordion 
+        header={header} 
+        body={body} 
+      />
+     );
+   });
+   return (
+    <div>
+       {cards}
+    </div>
+   )
+ }
+ function Accordion(props) {
+   const cardIcon = 'fa fa-chevron-right';
+   const cardIconRotate = 'fa fa-chevron-right rotate';
+   
+   const [isOpen, setIsOpen] = React.useState(false);
+   const [rotateClass, setRotateState] = React.useState(cardIcon);
+   const { header, body } = props;
+   
+   function toggle() {
+     setIsOpen(!isOpen);
+     setRotateState(
+      isOpen === true
+         ? cardIcon 
+         : cardIconRotate 
+     );
+   }
+   
+   return (
+     <div className="card">
+       <div 
+         className="card-header"
+         onClick={toggle}>
+         <h2>{header}</h2>
+         <i className={rotateClass}></i>
+       </div>
+       {isOpen && (
+         <div className="card-body">{body}</div>
+       )}
+     </div>
+   )
+ }
+
+
+
+ReactDOM.render(
+  <Example />,
+  document.getElementById('app')
+);
