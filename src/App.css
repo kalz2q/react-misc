@@ -1,7 +1,27 @@
 .App {
-  /* text-align: center; */
+  text-align: center;
 }
 
 li {
   list-style: none;
+}
+
+.acc_trigger {
+  &.is_open {
+    //+-アイコン
+    .fa-plus-circle::before {
+      content: "\f056";
+    }
+    //矢印アイコン
+    .fa-chevron-down::before {
+      content: "\f077";
+    }
+  }
+}
+.acc_content {
+  display: none;
+
+  &.is_open {
+    display: block;
+  }
 }

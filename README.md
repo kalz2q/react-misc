@@ -1,5 +1,12 @@
 # react-misc
 
+accordion
+qiita めっちゃ汎用的なアコーディオンメニューを作ろう
+は font-awesome と scss を使っているのでボツ。
+dotinstall のをやろう。
+
+---
+
 hello names を作ってみて、文字列処理をもう少し学びたいと思った。
 課題 heredoc から id 入りの json を作る
 
