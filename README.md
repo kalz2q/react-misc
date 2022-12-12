@@ -5,6 +5,8 @@ accordion - react - hook
 Devyan
 https://codepen.io/lovemaui/pen/bGwwxwx
 が動いているのでこれでやろう。
+=> とりあえず書き写したところpropsが云々。Componentスタイルを解こう。
+一旦09-temp-accordion-devy.tsx.txtとして保存した。
 
 ---
 

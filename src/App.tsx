@@ -5,73 +5,6 @@ import './App.css';
 // https://codepen.io/lovemaui/pen/bGwwxwx
 const { useState } = React;
 
-function App() {
-  const cardIcon = '+';
-  const cardIconRotate = '-';
-  const [isOpen, setIsOpen] = useState(false);
-  const [rotateClass, setRotateState] = useState(cardIcon);
-
-
-  const { header, body } = props;
-
-
-  function toggle() {
-    setIsOpen(!isOpen);
-    setRotateState(
-      isOpen === true
-        ? cardIcon
-        : cardIconRotate
-    );
-  }
-
-  function Accordion(props) {
-    const cardIcon = 'fa fa-chevron-right';
-    const cardIconRotate = 'fa fa-chevron-right rotate';
-
-    const [isOpen, setIsOpen] = React.useState(false);
-    const [rotateClass, setRotateState] = React.useState(cardIcon);
-    const { header, body } = props;
-
-    function toggle() {
-      setIsOpen(!isOpen);
-      setRotateState(
-        isOpen === true
-          ? cardIcon
-          : cardIconRotate
-      );
-    }
-
-    return (
-      <div className="card">
-        <div
-          className="card-header"
-          onClick={toggle}>
-          <h2>{header}</h2>
-          <i className={rotateClass}></i>
-        </div>
-        {isOpen && (
-          <div className="card-body">{body}</div>
-        )}
-      </div>
-    )
-  }
-
-  const cards = products.map((product) => {
-    const { header, body } = product;
-    return (
-      <Accordion
-        header={header}
-        body={body}
-      />
-    );
-  });
-
-  return (
-    <div className="App card">
-      {cards}
-    </div >
-  );
-}
 
 const products = [
   {
@@ -87,5 +20,50 @@ const products = [
     body: '嘘です'
   }
 ];
+
+const cardIcon = '+';
+const cardIconRotate = '-';
+
+function App() {
+  const [isOpen, setIsOpen] = useState(false);
+  const [rotateClass, setRotateState] = useState(cardIcon);
+
+  // const { header, body } = props;
+
+
+  function toggle() {
+    setIsOpen(!isOpen);
+    setRotateState(
+      isOpen === true
+        ? cardIcon
+        : cardIconRotate
+    );
+  }
+
+
+
+  return (
+    <div className="App card">
+      {
+        products.map((product) => {
+          const { header, body } = product;
+          return (
+            <div className="card">
+              <div
+                className="card-header"
+                onClick={toggle}>
+                <h2>{header}</h2>
+                <i className={rotateClass}></i>
+              </div>
+              {isOpen && (
+                <div className="card-body">{body}</div>
+              )}
+            </div>
+          );
+        })
+      }
+    </div >
+  );
+}
 
 export default App;
