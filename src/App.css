@@ -21,15 +21,16 @@ dt {
 }
 
 dt::before {
-  content: 'Q. ';
+  content: "Q. ";
 }
 
 dt::after {
-  content: '+';
+  content: "+";
+  font-size: 36px;
   position: absolute;
   top: 8px;
   right: 16px;
-  transition: transform .3s;
+  transition: transform 0.3s;
 }
 
 dl > div.appear dt::after {
@@ -43,12 +44,12 @@ dd {
 }
 
 dd::before {
-  content: 'A .';
+  content: "A .";
 }
 
 dl > div.appear dd {
   display: block;
-  animation: .3s fadeIn;
+  animation: 0.3s fadeIn;
 }
 
 @keyframes fadeIn {
