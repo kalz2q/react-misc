@@ -5,8 +5,10 @@ accordion - react - hook
 Devyan
 https://codepen.io/lovemaui/pen/bGwwxwx
 が動いているのでこれでやろう。
-=> とりあえず書き写したところpropsが云々。Componentスタイルを解こう。
-一旦09-temp-accordion-devy.tsx.txtとして保存した。
+=> とりあえず書き写したところ props が云々。Component スタイルを解こう。
+一旦 09-temp-accordion-devy.tsx.txt として保存した。
+=> 動いたのだが個別に動かない。個別に isOpen のデータを持たせれば良いと思うがどうか。
+=> list 表示でないので key が不要なのはそれはそれで構わないか。
 
 ---
 

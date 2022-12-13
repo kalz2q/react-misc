@@ -1,10 +1,9 @@
 import React from 'react';
 import './App.css';
-// cannot find props ｍで来た
+// cannot find props => 出来た。propsを排除した。
 // Devyan
 // https://codepen.io/lovemaui/pen/bGwwxwx
 const { useState } = React;
-
 
 const products = [
   {
@@ -40,8 +39,6 @@ function App() {
     );
   }
 
-
-
   return (
     <div className="App card">
       {
@@ -53,7 +50,9 @@ function App() {
                 className="card-header"
                 onClick={toggle}>
                 <h2>{header}</h2>
-                <i className={rotateClass}></i>
+                {/* <i className={rotateClass}>{rotateClass}</i> */}
+                <i className="rotateClass">{rotateClass}</i>
+
               </div>
               {isOpen && (
                 <div className="card-body">{body}</div>
