@@ -1,0 +1,26 @@
+import React from 'react';
+import './App.css';
+// Reactによるアコーディオンメニューの実装方法
+// https://nishinatoshiharu.com/react-accordion/#_react-spring
+
+const { useState } = React;
+
+
+function App() {
+  const [reverseIcon, setReverseIcon] = useState(false);
+
+  const handleClick = () => {
+    setReverseIcon(!reverseIcon);
+  };
+
+  return (
+    <div className="App">
+      <div onClick={() => handleClick} >
+        <svg className="icon reverseIcon reverse" width="160" height="160" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="m24 30.75-12-12 2.15-2.15L24 26.5l9.85-9.85L36 18.8Z" /></svg>
+      </div>
+
+    </div >
+  );
+}
+
+export default App;
