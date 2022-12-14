@@ -1,0 +1,25 @@
+.App {
+  /* text-align: center; */
+  display: flex;
+  /* flex-direction: column; */
+  /* align-items: center; */
+  justify-content: center;
+
+  padding: 64px;
+}
+
+.box {
+  width: 100px;
+  height: 100px;
+  background: orange;
+  text-align: center;
+  line-height: 100px;
+  transition-property: border-radius;
+  transition-duration: 2s;
+}
+
+.bg-salmon {
+  background-color: salmon;
+  color: white;
+  border-radius: 50%;
+}
