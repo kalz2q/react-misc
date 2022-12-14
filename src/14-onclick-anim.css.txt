@@ -18,7 +18,6 @@
   transition-duration: 2s;
 }
 
-
 .bg-salmon {
   background-color: salmon;
   color: white;
