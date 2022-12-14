@@ -1,45 +1,44 @@
 import React from 'react';
 import './App.css';
-// cannot find props => 出来た。propsを排除した。
-// Devyan
-// https://codepen.io/lovemaui/pen/bGwwxwx
-const { useState } = React;
+// 
 
+const { useEffect, useRef, useState } = React;
 
-const cardIcon = '+';
-const cardIconRotate = '-';
 
 function App() {
-  const [isOpen, setIsOpen] = useState(false);
-  const [rotateClass, setRotateState] = useState(cardIcon);
 
-  // const { header, body } = props;
+  // type Props = {
+  //   title: string;
+  //   withIcon?: boolean;
+  // };
 
+  const childElement = useRef<HTMLDivElement>(null);
+  const [showChildren, setshowChildren] = useState(false);
+  const [childHeight, setChildHeight] = useState(0);
+  const [reverseIcon, setReverseIcon] = useState(false);
 
-  function toggle() {
-    setIsOpen(!isOpen);
-    setRotateState(
-      isOpen === true
-        ? cardIcon
-        : cardIconRotate
-    );
-  }
+  useEffect(() => {
+    if (childElement.current) {
+      const height = childElement.current?.clientHeight;
+      setChildHeight(height);
+    }
+  }, []);
+
+  const handleClick = () => {
+    if (childElement.current) {
+      setshowChildren(!showChildren);
+    }
+    setReverseIcon(!reverseIcon);
+  };
+
 
   return (
     <div className="App card">
-      <h1>FAQ</h1>
       <dl>
         <div className="appear">
-          <dt>質問です</dt>
-          <dd>回答です。回答です。</dd>
-        </div>
-        <div>
-          <dt>質問です</dt>
-          <dd>回答です。回答です。回答です。回答です。回答です。</dd>
-        </div>
-        <div>
-          <dt>質問です</dt>
-          <dd>回答です。回答です。回答です。回答です。回答です。回答です。回答です。</dd>
+          <div className="item" onClick={() => handleClick()}>親メニュー</div>
+          <div>子メニュー1</div>
+          <div>子メニュー1</div>
         </div>
       </dl>
     </div >
