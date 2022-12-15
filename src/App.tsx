@@ -1,28 +1,44 @@
 import React from 'react';
 import './App.css';
-// 詳細cssアニメーション編
-// Add or Remove a Class on click in React
-// https://bobbyhadz.com/blog/react-add-remove-class-on-click
+// Reactによるアコーディオンメニューの実装方法
+// https://nishinatoshiharu.com/react-accordion/#_react-spring
 
-const { useState } = React;
+const { useEffect, useRef, useState } = React;
+
 
 function App() {
-  const [isActive, setIsActive] = useState(true);
-  const handleClick = (event: any) => {
-    // 👇️ toggle isActive state on click
-    setIsActive(current => !current);
-    console.log(isActive);
-    if (isActive) { event.currentTarget.classList.add('bg-salmon'); }
-    else { event.currentTarget.classList.remove('bg-salmon'); };
 
+  // 混乱してないか?
+  // const childElement = useRef<HTMLDivElement>(null);
+  const [showChildren, setshowChildren] = useState(true);
+  // const [childHeight, setChildHeight] = useState(0);
+  const [reverseIcon, setReverseIcon] = useState(false);
+
+  // useEffect(() => {
+  //   if (childElement.current) {
+  //     const height = childElement.current?.clientHeight;
+  //     setChildHeight(height);
+  //   }
+  // }, []);
+
+  const handleClick = () => {
+    // if (childElement.current) {
+    // }
+    setshowChildren(!showChildren);
+    setReverseIcon(!reverseIcon);
   };
 
+  // svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="m24 30.75-12-12 2.15-2.15L24 26.5l9.85-9.85L36 18.8Z"/></svg>
+
   return (
-    <div className="App">
-      {/* <div className={isActive ? 'box bg-salmon' : 'box'} onClick={handleClick}> */}
-      <div className="box" onClick={handleClick}>
-        Click
-      </div>
+    <div className="App card">
+      <dl>
+        <div className="appear">
+          <div className="item" onClick={() => handleClick()}>親メニュー</div>
+          <div className="item" >子メニュー1</div>
+          <div className="item" >子メニュー1</div>
+        </div>
+      </dl>
     </div >
   );
 }
