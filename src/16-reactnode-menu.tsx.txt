@@ -17,7 +17,7 @@ function App() {
       if (childElement.current) {
         const childheight = childElement.current?.clientHeight;
         // console.log("childheight:", childheight);
-        alert("childheight:"+childheight);
+        alert("childheight:" + childheight);
       }
     };
 

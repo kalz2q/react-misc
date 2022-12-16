@@ -4,6 +4,8 @@
 Reactによるアコーディオンメニューの実装方法
 https://nishinatoshiharu.com/react-accordion/#_react-spring
 
+useRefによるDOMの高さの取得 <= 実験してみよう
+
 ---
 accordion-dot
 をやってみる。考え方がぜんぜん違うので云々。
