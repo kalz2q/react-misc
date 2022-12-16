@@ -7,12 +7,12 @@ const { useState } = React;
 
 
 function App() {
-  const [showChildren, setShowChildren] = useState(false);
+  const [showChildren, setShowChildren] = useState(true);
 
   const handleClick = () => {
     setShowChildren(!showChildren);
     if (showChildren) {
-      
+
     }
   }
 
@@ -21,8 +21,12 @@ function App() {
       <div className="item" onClick={() => handleClick()}>
         親メニュー
       </div>
-      <div className="item childItem">小メニュー1</div>
-      <div className="item childItem">小メニュー2</div>
+      <div className={showChildren ? "item childItem" : " childItem hide"}>
+        小メニュー1
+      </div>
+      <div className={showChildren ? "item childItem" : " childItem hide"}>
+        小メニュー2
+      </div>
     </div >
   );
 }

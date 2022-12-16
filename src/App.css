@@ -16,6 +16,10 @@
   overflow: hidden; /* heightをはみ出す子要素を表示させないようにすることで、上から徐々に子要素が表示されるアニメーションを実現 */
 }
 
+. hide {
+  height: 30px;
+}
+
 .icon {
   position: absolute;
   right: 15px;
