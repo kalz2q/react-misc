@@ -1,21 +1,34 @@
 # react-misc
 
+css icon 使い方
+CSS でアイコンを作成するには？おすすめのアイコンフォントサービスも紹介
+https://web-camp.io/magazine/archives/89316
+
+---
+
+overlap-material-icon => dvi.failed_icon
+=> 面白かったし勉強にもなったが求めているものとは違う。
+
+---
 
 accordion-dot
 に戻る
 
 ---
-一休みして 
-Reactによるアコーディオンメニューの実装方法
+
+一休みして
+React によるアコーディオンメニューの実装方法
 https://nishinatoshiharu.com/react-accordion/#_react-spring
 
-useRefによるDOMの高さの取得 <= 実験してみよう
+useRef による DOM の高さの取得 <= 実験してみよう
 
 ---
+
 accordion-dot
 をやってみる。考え方がぜんぜん違うので云々。
 
 ---
+
 react accordion
 accordion - react - hook
 Devyan

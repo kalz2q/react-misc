@@ -1,0 +1,46 @@
+html
+---
+<div class="failed_icon">
+  <i class="material-icons large">mail</i>
+  <span></span>
+</div>
+
+<div class="failed_icon">
+  <i class="material-icons large">photo_camera</i>
+  <span></span>
+</div>
+
+<div class="failed_icon">
+  <i class="material-icons large">sd_card</i>
+  <span></span>
+</div>
+---
+css
+---
+@import url(//fonts.googleapis.com/icon?family=Material+Icons);
+
+div.failed_icon {
+  display: inline-block;
+  position: relative;
+
+  span::before, span::after {
+    display: block;
+    content: "";
+    position: absolute;
+    top: 70%;
+    left: 90%;
+    width: 50%;
+    height: 10%;
+    margin: -8% 0 0 -42%;
+    background: #f50057;
+    border-radius: 1px;
+  }
+
+  span::before {
+    transform: rotate(-45deg);
+  }
+
+  span::after {
+    transform: rotate(45deg);
+  }
+}
