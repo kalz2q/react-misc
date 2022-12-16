@@ -1,43 +1,28 @@
-import React, { FC, ReactNode, useRef } from 'react';
+import React from 'react';
 import './App.css';
 // Reactによるアコーディオンメニューの実装方法
 // https://nishinatoshiharu.com/react-accordion/#_react-spring
-// useRefによるDOMの高さの取得 <= 実験してみよう
+// アイデアだけを頂こう。
+const { useState } = React;
+
 
 function App() {
+  const [showChildren, setShowChildren] = useState(false);
 
-  type Props = {
-    children?: ReactNode;
-  };
-
-  const Menu: FC<Props> = ({ children }) => {
-    const childElement = useRef<HTMLDivElement>(null);
-
-    const handleClick = () => {
-      if (childElement.current) {
-        const childheight = childElement.current?.clientHeight;
-        // console.log("childheight:", childheight);
-        alert("childheight:"+childheight);
-      }
-    };
-
-    return (
-      <>
-        <div onClick={handleClick} className="item">
-          Menu
-        </div>
-        <div ref={childElement}>{children}</div>
-      </>
-    );
-  };
+  const handleClick = () => {
+    setShowChildren(!showChildren);
+    if (showChildren) {
+      
+    }
+  }
 
   return (
     <div className="App card">
-
-      <Menu>
-        <Menu />
-      </Menu>
-
+      <div className="item" onClick={() => handleClick()}>
+        親メニュー
+      </div>
+      <div className="item childItem">小メニュー1</div>
+      <div className="item childItem">小メニュー2</div>
     </div >
   );
 }
