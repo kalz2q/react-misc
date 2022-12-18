@@ -1,15 +1,30 @@
+.App {
+  text-align: center;
+  /* height: 40vmin; */
+  /* pointer-events: none; */
+  /* background-color: #282c34; */
+  /* min-height: 100vh; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  /* color: white; */
+}
+
 .icon,
 .icon:before,
 .icon:after,
 .icon i,
 .icon i:before,
 .icon i:after {
-  transition: all 0.4s ease;
+  /* transition: all 0.4s ease; */
+  transition: all 3s ease;
 }
 
 .paperclip.icon {
   color: #000;
-  position: absolute;
+  /* position: absolute; */
   margin-left: 9px;
   margin-top: 2px;
   width: 6px;
@@ -19,7 +34,7 @@
   border-right: solid 1px currentColor;
   border-top: solid 1px currentColor;
   -webkit-transform: rotate(45deg);
-  transform: rotate(45deg);
+  transform: scale(5) rotate(45deg);
 }
 
 .paperclip.icon:before {
@@ -49,8 +64,8 @@
 }
 
 .map.icon {
-  color: #000;
-  position: absolute;
+  color: red;
+  /* position: absolute; */
   margin-left: 8px;
   margin-top: 4px;
   width: 4px;
@@ -58,7 +73,7 @@
   border-radius: 1px;
   border: solid 1px currentColor;
   -webkit-transform: skewY(20deg);
-  transform: skewY(20deg);
+  transform: scale(5) skewY(20deg);
 }
 
 .map.icon:before {

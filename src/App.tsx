@@ -3,7 +3,7 @@ import './App.css';
 const { useState } = React;
 
 function App() {
-  const [toggleIcon, setToggleIcon ] = useState(false);
+  const [toggleIcon, setToggleIcon] = useState(false);
 
   const handleClick = () => {
     setToggleIcon((current) => !toggleIcon);
@@ -11,7 +11,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1 onClick={() => handleClick()}>from wenting zhang css animation</h1>
+      <h1>click icon</h1>
       <div
         className={toggleIcon ? "map icon" : "paperclip icon"}
         onClick={() => handleClick()}
