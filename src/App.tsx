@@ -5,7 +5,10 @@ function App() {
   return (
     <div className="App">
       <h1>てんぷれーと</h1>
-      <div className="box cross"></div>
+      <div className="box">
+        <div className="crossed">
+        </div>
+      </div>
     </div>
   );
 }
