@@ -1,12 +1,20 @@
 # react-misc
 
-wenting zhang css animation
-
 
 ---
+https://codepen.io/oliviale/pen/xxboXzo toggles
+
+と言うのがクリックを多数処理していたので参考。htmlのところにpugで書かれているがこれはロジックが追えるのではないか。とりあえずforkしようか。
+---
+wenting zhang css icon animation
+=> 22-css-icon-animation
+
+---
+
 ボックスにバッテン
-20-content2716 => フォントを使うと良くない。なぜならフォントはCSSとは別の体系なので、コントロールが出来ない。場所が不安定。
-21-box-crossを作る。材料はoverlap material icon
+20-content2716 => フォントを使うと良くない。なぜならフォントは CSS とは別の体系なので、コントロールが出来ない。場所が不安定。
+21-box-cross を作る。材料は overlap material icon
+
 ---
 
 css icon 使い方
