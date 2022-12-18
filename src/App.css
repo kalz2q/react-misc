@@ -1,37 +1,88 @@
-.box {
-  width: 100px;
-  height: 100px;
-  background-color: pink;
-  position: relative;
+.icon,
+.icon:before,
+.icon:after,
+.icon i,
+.icon i:before,
+.icon i:after {
+  transition: all 0.4s ease;
 }
 
-/* .crossed::before {
-  display: inline-block;
-  position: relative;
-} */
+.paperclip.icon {
+  color: #000;
+  position: absolute;
+  margin-left: 9px;
+  margin-top: 2px;
+  width: 6px;
+  height: 12px;
+  border-radius: 4px 4px 0 0;
+  border-left: solid 1px currentColor;
+  border-right: solid 1px currentColor;
+  border-top: solid 1px currentColor;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
 
-.crossed::before,
-.crossed::after {
-  display: block;
+.paperclip.icon:before {
   content: "";
   position: absolute;
-  /* top: 70%;
-  left: 90%; */
-  top: 50%;
-
-  width: 50%;
-  width: 100%;
-  height: 10%;
-
-  /* margin: -8% 0 0 -42%; */
-  background: #f50057;
-  border-radius: 10px;
+  top: 11px;
+  left: -1px;
+  width: 4px;
+  height: 6px;
+  border-radius: 0 0 3px 3px;
+  border-left: solid 1px currentColor;
+  border-right: solid 1px currentColor;
+  border-bottom: solid 1px currentColor;
 }
 
-.crossed::before {
-  transform: translateY(-50%) rotate(-45deg);
+.paperclip.icon:after {
+  content: "";
+  position: absolute;
+  left: 1px;
+  top: 1px;
+  width: 2px;
+  height: 10px;
+  border-radius: 4px 4px 0 0;
+  border-left: solid 1px currentColor;
+  border-right: solid 1px currentColor;
+  border-top: solid 1px currentColor;
 }
 
-.crossed::after {
-  transform: translateY(-50%) rotate(45deg);
+.map.icon {
+  color: #000;
+  position: absolute;
+  margin-left: 8px;
+  margin-top: 4px;
+  width: 4px;
+  height: 10px;
+  border-radius: 1px;
+  border: solid 1px currentColor;
+  -webkit-transform: skewY(20deg);
+  transform: skewY(20deg);
+}
+
+.map.icon:before {
+  content: "";
+  position: absolute;
+  left: -6px;
+  top: 1px;
+  width: 4px;
+  height: 10px;
+  border-radius: 1px;
+  border: solid 1px currentColor;
+  -webkit-transform: skewY(-40deg);
+  transform: skewY(-40deg);
+}
+
+.map.icon:after {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: -3px;
+  width: 4px;
+  height: 10px;
+  border-radius: 1px;
+  border: solid 1px currentColor;
+  -webkit-transform: skewY(-40deg);
+  transform: skewY(-40deg);
 }

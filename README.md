@@ -1,10 +1,12 @@
 # react-misc
 
+wenting zhang css animation
+
+
+---
 ボックスにバッテン
 20-content2716 => フォントを使うと良くない。なぜならフォントはCSSとは別の体系なので、コントロールが出来ない。場所が不安定。
 21-box-crossを作る。材料はoverlap material icon
-
-
 ---
 
 css icon 使い方
