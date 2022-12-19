@@ -1,10 +1,14 @@
 # react-misc
 
+react checkbox components
+https://codepen.io/Nfinleymusic/pen/OgqzpV
+とりあえずなぞってみようか。
+
 
 ---
 https://codepen.io/oliviale/pen/xxboXzo toggles
 
-と言うのがクリックを多数処理していたので参考。htmlのところにpugで書かれているがこれはロジックが追えるのではないか。とりあえずforkしようか。
+と言うのがクリックを多数処理していたので参考。htmlのところにpugで書かれているがこれはロジックが追えるのではないか。とりあえずforkしようか。 => checkboxだった。
 ---
 wenting zhang css icon animation
 => 22-css-icon-animation
