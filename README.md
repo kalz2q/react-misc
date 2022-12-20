@@ -1,15 +1,42 @@
 # react-misc
 
+React-Router が必要らしい。
+qiita https://qiita.com/teradonburi/items/fb91e5feacab5071cfef
+ReactJS で作る今時の SPA 入門（基本編）
+github
+https://github.com/teradonburi/learnReactJS/tree/ReactRouter
+本家のマニュアルと tutoril があった。
+https://reactrouter.com/en/main/start/tutorial
+どうも違うみたいと言うかfollow出来ません。
+はてなの記事
+https://dev-k.hatenablog.com/entry/20211115/1636952945
+React【SPA】react-router-dom v6でルーティング
+これを読んでみよう。
+codepenをReactRouterで検索。
+https://codepen.io/danbuda/pen/WGOPbo
+これを実装してみよう。
+
+---
+
+simple-single-page-application-demo
+forked => fork すると元記事がわからなくなるね
+https://codepen.io/kalz2q/pen/abjzdPm
+方針 html => react の App の return に書き換えて表示してみる。
+=> ここまではできた。各ページを置き換える方法がわからない。
+とりあえず save => 23-temp-spa
+
+---
+
 react checkbox components
 https://codepen.io/Nfinleymusic/pen/OgqzpV
 とりあえずなぞってみようか。
 
-
 ---
+
 https://codepen.io/oliviale/pen/xxboXzo toggles
 
-と言うのがクリックを多数処理していたので参考。htmlのところにpugで書かれているがこれはロジックが追えるのではないか。とりあえずforkしようか。 => checkboxだった。
----
+## と言うのがクリックを多数処理していたので参考。html のところに pug で書かれているがこれはロジックが追えるのではないか。とりあえず fork しようか。 => checkbox だった。
+
 wenting zhang css icon animation
 => 22-css-icon-animation
 
