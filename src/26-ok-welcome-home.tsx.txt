@@ -1,18 +1,11 @@
-// rewrite 24-ok-react-router-dom
-// to 26-ok-welcom-home
+// hello-react-router-v6がcodepenで動いたので
+// あらためて26-weocom-homeをかきなおす
+import React from 'react';
+import ReactDOM from "react-dom";
+import * as ReactRouterDOM from "react-router-dom";
 
-import React from 'react'; // => skypack
-import ReactDOM from 'react-dom'; // => skypack
-import * as ReactRouterDOM from 'react-router-dom'; // skypack
+const { BrowserRouter, Link, Routes, Route } = ReactRouterDOM;
 
-import './App.css';
-
-const {
-  BrowserRouter,
-  Link,
-  Routes,
-  Route
-} = ReactRouterDOM;
 
 const Home = () => {
   return (
@@ -53,15 +46,23 @@ const Login = () => {
   );
 };
 
+function NoMatch() {
+  return <h2>このページは存在しません。</h2>;
+}
+
 const App = () => {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path={`/`} element={<Home />} />
-        <Route path={`/register/`} element={<Register />} />
-        <Route path={`/login/`} element={<Login />} />
-      </Routes>
-    </BrowserRouter>
+    <>
+      <BrowserRouter>
+        <h1>welcome react router home</h1>
+        <Routes>
+          <Route path={`/`} element={<Home />} />
+          <Route path={`/register/`} element={<Register />} />
+          <Route path={`/login/`} element={<Login />} />
+          <Route path="*" element={<Home />} />
+        </Routes>
+      </BrowserRouter>
+    </>
   );
 };
 

@@ -1,23 +1,50 @@
-// React Router v6 はじめでもわかるルーティングの設定方法の基礎
-// https://reffect.co.jp/react/react-router-6
-// React RouterのみがReactで利用できる唯一のルーティングライブラリではありません。
+// hello-react-router-v6がcodepenで動いたので
+// あらためて26-weocom-homeをかきなおす
 import React from 'react';
 import ReactDOM from "react-dom";
 import * as ReactRouterDOM from "react-router-dom";
 
 const { BrowserRouter, Link, Routes, Route } = ReactRouterDOM;
 
-function Home() {
-  return <h2>Home</h2>;
-}
 
-function About() {
-  return <h2>About</h2>;
-}
+const Home = () => {
+  return (
+    <>
+      <h1>ホーム</h1>
+      <div>
+        新規登録は<Link to={`/register/`}>こちら</Link>
+      </div>
+    </>
+  );
+};
 
-function Contact() {
-  return <h2>Contact</h2>;
-}
+const Register = () => {
+  return (
+    <>
+      <h1>新規登録ページ</h1>
+      <div>
+        ログインは<Link to={`/login/`}>こちら</Link>
+      </div>
+      <div>
+        <Link to={`/`}>ホームに戻る</Link>
+      </div>
+    </>
+  );
+};
+
+const Login = () => {
+  return (
+    <>
+      <h1>ログインページ</h1>
+      <div>
+        新規登録は<Link to={`/register/`}>こちら</Link>
+      </div>
+      <div>
+        <Link to={`/`}>ホームに戻る</Link>
+      </div>
+    </>
+  );
+};
 
 function NoMatch() {
   return <h2>このページは存在しません。</h2>;
@@ -27,23 +54,12 @@ const App = () => {
   return (
     <>
       <BrowserRouter>
-        <h1>hello react router v6</h1>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/about">About</Link>
-          </li>
-          <li>
-            <Link to="/contact">Contact</Link>
-          </li>
-        </ul>
+        <h1>welcome react router home</h1>
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="*" element={<NoMatch />} />
+          <Route path={`/`} element={<Home />} />
+          <Route path={`/register/`} element={<Register />} />
+          <Route path={`/login/`} element={<Login />} />
+          <Route path="*" element={<Home />} />
         </Routes>
       </BrowserRouter>
     </>
