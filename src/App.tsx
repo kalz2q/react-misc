@@ -1,49 +1,159 @@
 import React from 'react';
 import './App.css';
-//
-// simple-single-page-application-demo
+// import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+// import * as ReactDom from 'react-router-dom';
+import * as ReactDom from 'react-router-dom';
+/*
+import {
+  BrowserRouter,
+  Link,
+  Routes,
+  Route,
+  Outlet,
+  useParams,
+  useOutletContext,
+  useRoutes
+} from "https://cdn.skypack.dev/react-router-dom";
 
 
-function App() {
+*/
+
+// import * as ReactDom from "https://cdn.skypack.dev/react-router-dom@6.5.0";
+
+// 元記事: React Router v6 はじめでもわかるルーティングの設定方法の基礎
+// https://reffect.co.jp/react/react-router-6
+// const { BrowserRouter, Routes, Route } = ReactDom;
+
+// https://cdn.skypack.dev/react-router-dom@6.5.0
+// https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js
+// <script src='https://unpkg.com/react-router-dom@5.0.0/umd/react-router-dom.min.js'></script>
+// https://unpkg.com/react-router-dom@5.0.0/umd/react-router-dom.min.js
 
 
+function Home() {
+  return <h2>Home</h2>;
+}
+
+function BookList() {
   return (
-    <div className="App">
-      <div className="views">
-        <div className="view view-main">
-          <div className="pages">
-            <div className="page index" data-page="index">
-              <div className="page-content">
-                <p>Home page</p>
-                <a className="btn" id="go-about" href="#about?id=1&name=hejx">click and go 'about' page</a>
-                <a className="btn" id="go-services" href="#services?name=jb">click and go 'services' page</a>
-              </div>
-            </div>
-
-            {/* <!-- About page --> */}
-            <div className="page cached about" data-page="about">
-              <div className="page-content">
-                <p>About page</p>
-                <a className="btn" id="go-back" href="#">go back</a>
-              </div>
-            </div>
-
-            {/* <!-- Services page --> */}
-            <div className="page cached services" data-page="services">
-              <div className="page-content">
-                <p>Services page</p>
-                <a className="btn" id="go-about2" href="#about?id=123">click and go 'about' page</a>
-                <a className="btn" id="go-back2" href="#">go back</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div>
+    <>
+      <h2>BookList</h2>
+    </>
   );
 }
 
+function Book() {
+  const { id } = ReactDom.useParams();
+  const obj = ReactDom.useOutletContext();
+
+  return (
+    <>
+      <h2>
+        Book {id} {/* {obj.hello} */}
+      </h2>
+    </>
+  );
+}
+
+function NewBook() {
+  return (
+    <>
+      <h2>NewBook</h2>
+    </>
+  );
+}
+
+function NotFound() {
+  return (
+    <>
+      <h2>NotFound</h2>
+    </>
+  );
+}
+
+function BookLayout() {
+  return (
+    <nav>
+      <li>
+        <ReactDom.Link to="/books/1">Book 1</ReactDom.Link>
+      </li>
+
+      <li>
+        <ReactDom.Link to="/books/2">Book 2</ReactDom.Link>
+      </li>
+
+      <li>
+        <ReactDom.Link to="/books/new">New Book</ReactDom.Link>
+      </li>
+
+      <ReactDom.Outlet context={{ hello: "world" }} />
+    </nav>
+  );
+}
+
+function BookRoutes() {
+  return (
+    <>
+      <BookLayout />
+      <ReactDom.Routes>
+        <ReactDom.Route index element={<BookList />} />
+        <ReactDom.Route path=":id" element={<Book />} />
+        <ReactDom.Route path="new" element={<NewBook />} />
+      </ReactDom.Routes>
+    </>
+  );
+}
+const App = () => {
+  // let element = ReactDom.useRoutes([
+  //   {
+  //     path: "/",
+  //     element: <Home />
+  //   },
+  //   {
+  //     path: "*",
+  //     element: <NotFound />
+  //   }
+  // ]);
+
+  return (
+    <div>
+      <h1>Learn React Router v6 In 45 Minutes-Basics</h1>    
+      <ReactDom.BrowserRouter>
+      <ReactDom.Routes>
+        <ReactDom.Route path="/books" element={<h1>Extra Content</h1>} />
+      </ReactDom.Routes>
+
+      <li>
+        {/* <ReactDom.Link to="/" replaced reloadDocument state={{}}> */}
+        <ReactDom.Link to="/"  state={{}}>
+          Home
+        </ReactDom.Link>
+      </li>
+      <li>
+        <ReactDom.Link to="/books">Books</ReactDom.Link>
+      </li>
+      <ReactDom.Routes>
+        <ReactDom.Route path="/" element={<Home />} />
+        <ReactDom.Route path="/books/*" element={<BookRoutes /> /* <BookLayout /> */}>
+          {/* 
+          <Route index element={<BookList />} />
+          <Route path=":id" element={<Book />} />
+          <Route path="new" element={<NewBook />} />
+          */}
+        </ReactDom.Route>
+
+        {/* 
+        <Route path="/books" element={<BookList />} />
+        <Route path="/books/:id" element={<Book />} />
+        <Route path="/books/new" element={<NewBook />} />
+        <Route path="*" element={<NotFound />} />
+        */}
+      </ReactDom.Routes>
+    </ReactDom.BrowserRouter>
+    </div>
+
+  );
+};
 
 
 export default App;
