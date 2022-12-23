@@ -1,22 +1,30 @@
-// switchtransition
-import React from "react";
-import { SwitchTransition, CSSTransition } from "react-transition-group";
-import { Button, Form } from "react-bootstrap";
-import "bootstrap/dist/css/bootstrap.min.css";
+// アイデア
+// 30-ok-emotion...
+// が動いたが、styledを使っているのでcodepenで動かない。
+// reactcommunityのtransition groupの解説の例をやってみる。
+// codesandbox => codepenへの翻訳
+// https://codesandbox.io/s/csstransition-component-m77l2vp00x?from-embed
+import React, { useState, useRef } from 'react';
+import { createRoot } from 'react-dom/client';
+import { Container, Button, Alert } from 'react-bootstrap';
+import { CSSTransition } from 'react-transition-group';
+import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
+
   const [showButton, setShowButton] = useState(true);
   const [showMessage, setShowMessage] = useState(false);
   const nodeRef = useRef(null);
   return (
-    <div style={{ paddingTop: '2rem' }}>
+    <Container style={{ paddingTop: '2rem' }}>
       {showButton && (
-        <button
+        <Button
           onClick={() => setShowMessage(true)}
-        // size="lg"
+          size="lg"
         >
           Show Message
-        </button>
+        </Button>
       )}
       <CSSTransition
         in={showMessage}
@@ -27,7 +35,7 @@ function App() {
         onEnter={() => setShowButton(false)}
         onExited={() => setShowButton(true)}
       >
-        {/* <Alert
+        <Alert
           ref={nodeRef}
           variant="primary"
           dismissible
@@ -40,16 +48,15 @@ function App() {
             This alert message is being transitioned in and
             out of the DOM.
           </p>
-          <button
+          <Button
             variant="primary"
             onClick={() => setShowMessage(false)}
           >
             Close
-          </button>
-        </Alert> */}
-        <alert>alert("kk")</alert>
+          </Button>
+        </Alert>
       </CSSTransition>
-    </div>
+    </Container>
   );
 }
 

@@ -1,5 +1,32 @@
 # react-misc
 
+アイデア
+30-ok-emotion...
+が動いたが、styled を使っているので codepen で動かない。
+reactcommunity の transition group の解説の例をやってみる。
+codesandbox => codepen への翻訳
+https://codesandbox.io/s/csstransition-component-m77l2vp00x?from-embed
+CSSTransition => 動いた 31 => bootstrapとかcodepenで動くか
+Transition => 動いている例が示されていないのでパス
+SwitchTrnasition
+TransitionGroup
+
+---
+
+30-ok-emotion...
+// react-transition-group 使ってみた
+// https://qiita.com/kzkapr1129/items/887b756cd36b5905fbd2
+// ---
+// react-transition-group にする
+// なぜなら framer-motion, react-spring は範囲が広すぎる
+// animation 全体をやりたいわけではない。
+// 今はむしろ react を理解する助けになるようなツールが使いたい
+// とりあえず
+// https://qiita.com/takeshisakuma/items/67578529789939c900ff
+// をなぞる
+
+---
+
 React-Router が必要らしい。
 qiita https://qiita.com/teradonburi/items/fb91e5feacab5071cfef
 ReactJS で作る今時の SPA 入門（基本編）
@@ -7,12 +34,12 @@ github
 https://github.com/teradonburi/learnReactJS/tree/ReactRouter
 本家のマニュアルと tutoril があった。
 https://reactrouter.com/en/main/start/tutorial
-どうも違うみたいと言うかfollow出来ません。
+どうも違うみたいと言うか follow 出来ません。
 はてなの記事
 https://dev-k.hatenablog.com/entry/20211115/1636952945
-React【SPA】react-router-dom v6でルーティング
+React【SPA】react-router-dom v6 でルーティング
 これを読んでみよう。
-codepenをReactRouterで検索。
+codepen を ReactRouter で検索。
 https://codepen.io/danbuda/pen/WGOPbo
 これを実装してみよう。
 
