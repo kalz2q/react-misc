@@ -1,14 +1,10 @@
-// learing framer-motion
-// 元記事 framer-motionとreact-routerを組み合わせたお手軽ページトランジション
-// https://mottox2.com/posts/440
-
 // translate
 // simple-single-page-application-demo
 // https://codepen.io/kalz2q/pen/NWBPmBL?editors=1000
 // 28-spa-slide
 // slideは出来ていない。
-import React from 'react';
 import './App.css';
+import React from 'react';
 import ReactDOM from "react-dom";
 import * as ReactRouterDOM from "react-router-dom";
 
