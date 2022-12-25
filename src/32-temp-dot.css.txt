@@ -2,7 +2,7 @@ body {
   text-align: center;
 }
 
-section {
+.section {
   border-width: 1px;
   border-color: gray;
   border-style: solid;

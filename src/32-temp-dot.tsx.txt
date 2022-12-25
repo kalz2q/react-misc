@@ -1,6 +1,5 @@
 // はじめてのjavascript dotinstall
 import React, { useState } from "react";
-import './App.css';
 
 function App() {
   const [textContent, setTextContent] = useState("ボケ防止にプログラミング頑張っています。温かく見守って下さい。");
@@ -11,8 +10,7 @@ function App() {
 
   return (
     <>
-      {/* <div className="section"> */}
-      <section>
+      <div className="section">
         <div
           className="face box"
           onClick={() => handleClick()}
@@ -27,10 +25,8 @@ function App() {
         </div>
         <h1>山田太郎</h1>
         <p>{textContent}</p>
-        {/* </div> */}
-      </section>
-      {/* <div className="footer">(c) kalz2q </div> */}
-      <footer>(c) kalz2q </footer>
+      </div>
+      <div className="footer">(c) kalz2q </div>
     </>
   );
 }
