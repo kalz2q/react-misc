@@ -1,12 +1,21 @@
 # react-misc
 
+32-temp-dot => はじめての javascript dotinstall だが、codepen にも上げてある。
+これからどう進めるか。中断。
+で、いま shopping list codepen をこちら react-misc に持ってきてとりあえず動かす
+=> 33-shopping-list-with-total
+これを簡略化して checklist だけのプログラムにする。
+それで最低 2 コマの div 画像に onclick で cross を付ける予定。
+
+---
+
 アイデア
 30-ok-emotion...
 が動いたが、styled を使っているので codepen で動かない。
 reactcommunity の transition group の解説の例をやってみる。
 codesandbox => codepen への翻訳
 https://codesandbox.io/s/csstransition-component-m77l2vp00x?from-embed
-CSSTransition => 動いた 31 => bootstrapとかcodepenで動くか
+CSSTransition => 動いた 31 => bootstrap とか codepen で動くか
 Transition => 動いている例が示されていないのでパス
 SwitchTrnasition
 TransitionGroup

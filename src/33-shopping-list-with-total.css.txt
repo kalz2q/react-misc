@@ -121,15 +121,3 @@ button:hover {
 .completed {
   text-decoration: line-through;
 }
-
-.orange {
-  width: 200px;
-  height: 200px;
-  background-color: orange;
-}
-
-.pink {
-  width: 200px;
-  height: 200px;
-  background-color: pink;
-}

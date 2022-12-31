@@ -12,12 +12,12 @@ const App = () => {
   };
   const [items, setItems] = useState<Item[]>([
     {
-      itemName: "pink",
+      itemName: "0st",
       quantity: 3,
       isSelected: true
     },
     {
-      itemName: "orange",
+      itemName: "1st",
       quantity: -3,
       isSelected: false
     }
@@ -26,7 +26,6 @@ const App = () => {
   const toggleComplete = (index: number) => {
     const newItems = [...items];
     newItems[index].isSelected = !newItems[index].isSelected;
-
     setItems(newItems);
   };
 
@@ -37,33 +36,33 @@ const App = () => {
     } else {
       newItems[index].isSelected = false;
     }
-
     setItems(newItems);
   };
 
 
 
   return (
-    <div className="App">
-      <h4>クリックするとバッテンcross</h4>
-      <div className="item-list">
-        {items.map((item, index) => (
-          <div className="item-container">
-            <div className="item-name" onClick={() => toggleComplete(index)}>
-              <input
-                type="checkbox"
-                checked={items[index].isSelected}
-                onChange={(e) => handleChecked(index, e.target.checked)}
-              />
-              {item.isSelected ? (
-                <div className={item.itemName}>kkk</div>
-              ) : (
-                <div className={item.itemName}>mmm</div>
-              )}
+    <div className="app-background">
+      <div className="main-container">
+        <h4>クリックするとバッテンcross</h4>
+        <div className="item-list">
+          {items.map((item, index) => (
+            <div className="item-container">
+              <div className="item-name" onClick={() => toggleComplete(index)}>
+                <input
+                  type="checkbox"
+                  checked={items[index].isSelected}
+                  onChange={(e) => handleChecked(index, e.target.checked)}
+                />
+                {item.isSelected ? (
+                  <span className="completed">{item.itemName}</span>
+                ) : (
+                  <span>{item.itemName}</span>
+                )}
+              </div>
             </div>
-          </div>
-        ))
-        }
+          ))}
+        </div>
       </div>
     </div>
   );
