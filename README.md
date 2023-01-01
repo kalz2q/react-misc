@@ -1,11 +1,20 @@
 # react-misc
 
+次checkboxの画像に
+1. crossを入れる
+2. css を云々
+3. クリックしたらcrossにする
+
+
+---
 32-temp-dot => はじめての javascript dotinstall だが、codepen にも上げてある。
 これからどう進めるか。中断。
 で、いま shopping list codepen をこちら react-misc に持ってきてとりあえず動かす
 => 33-shopping-list-with-total
 これを簡略化して checklist だけのプログラムにする。
 それで最低 2 コマの div 画像に onclick で cross を付ける予定。
+=> 34
+=> 35
 
 ---
 
