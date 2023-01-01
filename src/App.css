@@ -37,8 +37,9 @@
   height: 10%;
 
   /* margin: -8% 0 0 -42%; */
-  background: #f50057;
+  background: black;
   border-radius: 10px;
+  z-index: 5;
 }
 
 .crossed::before {
@@ -96,7 +97,7 @@
   left: 25%;
   border-left: 25px solid transparent;
   border-right: 25px solid transparent;
-  border-top: 15px solid red;
+  border-top: 15px solid black;
   transform: rotate(180deg);
   border-radius: 50%;
   z-index: 1;

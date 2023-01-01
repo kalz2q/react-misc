@@ -1,10 +1,17 @@
 # react-misc
+次 36 について
+// no map version を作ってみる。実験。消すかもしれない。
+// react-misc 37-maybe-checkbox-faceになる予定
+または
+boxesを作るかも。画像boxをflagのように並べてclickするとcrossが付く。
+accordionに戻るかも。
 
+---
 次checkboxの画像に
 1. crossを入れる
 2. css を云々
 3. クリックしたらcrossにする
-
+=> 36-ok-checkbox-face
 
 ---
 32-temp-dot => はじめての javascript dotinstall だが、codepen にも上げてある。

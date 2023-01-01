@@ -1,6 +1,7 @@
-// 
-// strip 
+// no map version を作ってみる。実験。消すかもしれない。
+// react-misc 37-maybe-checkbox
 import React from "react";
+import ReactDOM from "react-dom";
 import './App.css';
 const { useState } = React;
 
