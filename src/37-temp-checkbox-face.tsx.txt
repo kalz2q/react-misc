@@ -1,8 +1,6 @@
-// 36=>no map version を作ってみる。実験。消すかもしれない。
-// react-misc 38-maybe-checkbox
-// mapでindexでごまかした部分をidで明示的に書く=> indexをidとするだけで元と同じに動いた
-// mapを外すことに意味がないかも => いやある。なぜなら今回は画像が同じだが
-// 本来は違うはずだから。そだね。
+// no map version を作ってみる。実験。消すかもしれない。
+// react-misc 37-maybe-checkbox
+// mapでindexでごまかした部分をidで明示的に書く
 import React from "react";
 import ReactDOM from "react-dom";
 import './App.css';
@@ -54,6 +52,7 @@ const App = () => {
         {items.map((item, id) => (
           <div className="item-container">
             <div className="item-name" onClick={() => toggleComplete(id)}>
+              {id}
               <input
                 type="checkbox"
                 className="hide-checkbox"
